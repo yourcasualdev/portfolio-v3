@@ -27,7 +27,6 @@ const getPosts = (url) => {
 
 const main = async () => {
     const posts = [];
-
     try {
         console.log('Fetching posts from Medium...');
         const response = await getPosts(mediumApiUrl);
@@ -45,14 +44,19 @@ const main = async () => {
 
             const slug = slugify(post.title);
 
+            // remove lines to Follow
+            const lines = markdown.split('Follow\n')[1];
+
             const content = `---
 title: ${post.title}
 date: ${new Date(post.created).toISOString().split('T')[0]}
-description: ${post.description}
+description: ${post.title}
 tag: ${post.category.map((tag) => tag).join(', ')}
 author: ${post.author}
 ---
-${markdown}
+
+Read this post on [Medium](${post.link}).
+${lines}
 `;
             console.log(`Generating markdown file for ${post.title}...`);
             await fs.writeFile(path.join(__dirname, '..', 'pages', 'posts', slug + '.md'), content);
