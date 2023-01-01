@@ -1,6 +1,6 @@
 ---
 title: Stored Procedures in TSQL
-date: 2022-01-01
+date: 2023-01-01
 description: A stored procedure is a pre-compiled SQL program that can be executed to perform a specific task.
 tag: SQL, TSQL, MYSQL, POSTGRESQL, Database
 author: İbrahim BABAL
