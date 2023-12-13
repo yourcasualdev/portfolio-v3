@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@vercel/analytics": "^1.1.1",
+    "@vercel/speed-insights": "^1.0.1",
     "JSON": "^1.0.0",
     "gray-matter": "^4.0.2",
     "medium-to-markdown": "^0.0.3",
